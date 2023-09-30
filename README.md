@@ -31,7 +31,6 @@ To set up the chatbot locally, follow these steps:
 
 ```bash
 git clone https://github.com/talhaanwarch/streamlit-llama.git
-cd streamlit-chatbot-memory
 ```
 
 2. Create a virtual environment and activate it:
