@@ -4,7 +4,16 @@ from ctransformers import AutoModelForCausalLM
 from langchain.llms import CTransformers
 
 # App title
-st.set_page_config(page_title="Llama 2 Gita Chatbot 🦙💬")
+st.set_page_config(page_title="Llama 2 Gita Chatbot 🦙💬",
+                   page_icon="🦙",
+                   layout = "centered",
+                   initial_sidebar_state="collapsed")
+
+
+st.markdown(""" <style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style> """, unsafe_allow_html=True)
 
 @st.cache_resource()
 def ChatModel(temperature, top_p):
@@ -17,6 +26,7 @@ def ChatModel(temperature, top_p):
 
 with st.sidebar:
     st.title('Llama 2 Gita Chatbot 🦙💬')
+    
 
     
     temperature = 0.5
