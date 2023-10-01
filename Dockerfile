@@ -8,9 +8,11 @@ COPY ./ ./
 
 
 # Download the file from the URL and add it to the working directory
-RUN apt-get update && apt-get install -y curl && \
-    curl -o llama-2-7b-chat.ggmlv3.q2_K.bin https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/resolve/main/llama-2-7b-chat.ggmlv3.q2_K.bin && \
-    pip3 install -r requirements.txt
+RUN apt-get update && apt-get install -y wget
+
+RUN wget https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/resolve/main/llama-2-7b-chat.ggmlv3.q2_K.bin
+
+RUN pip3 install -r requirements.txt
 
 EXPOSE 8501
 
