@@ -1,7 +1,6 @@
 import streamlit as st
 import os
 from ctransformers import AutoModelForCausalLM
-from langchain.llms import CTransformers
 
 # App title
 st.set_page_config(page_title="Llama 2 Gita Chatbot 🦙💬",
@@ -36,7 +35,8 @@ with st.sidebar:
 
 # Store LLM generated responses
 if "messages" not in st.session_state.keys():
-    st.session_state.messages = [{"role": "assistant", "content": "Welcome to Gita ChatBot, How may I assist you today?"}]
+    st.session_state.messages = [{"role": "assistant", 
+                                  "content": "Welcome to Gita ChatBot, How may I assist you today?"}]
 
 # Display or clear chat messages
 for message in st.session_state.messages:
@@ -44,7 +44,8 @@ for message in st.session_state.messages:
         st.write(message["content"])
 
 def clear_chat_history():
-    st.session_state.messages = [{"role": "assistant", "content": "Welcome to Gita ChatBot, How may I assist you today?"}]
+    st.session_state.messages = [{"role": "assistant", 
+                                  "content": "Welcome to Gita ChatBot, How may I assist you today?"}]
 st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
 
 # Function for generating LLaMA2 response
@@ -64,7 +65,8 @@ def generate_llama2_response(prompt_input):
 
 # User-provided prompt
 if prompt := st.chat_input():
-    st.session_state.messages.append({"role": "user", "content": prompt})
+    st.session_state.messages.append({"role": "user",
+                                       "content": prompt})
     with st.chat_message("user"):
         st.write(prompt)
 
@@ -73,11 +75,12 @@ if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             response = generate_llama2_response(prompt)
-            placeholder = st.empty()
             full_response = ''
+            placeholder = st.empty()
             for item in response:
                 full_response += item
                 placeholder.markdown(full_response)
             placeholder.markdown(full_response)
-    message = {"role": "assistant", "content": full_response}
+    message = {"role": "assistant", 
+               "content": full_response}
     st.session_state.messages.append(message)
