@@ -77,3 +77,12 @@ The chatbot will be accessible at `http://localhost:8501` in your web browser.
 ## Bash Command
 
 We can directly run the 'run_script.bash' file to run the ChatBot. Before running the Bash Script, ensure the Model is present in the main directory.
+
+## Kubernetes Deployment
+
+To run the chatbot on kubernetes web server, run the following command
+
+```bash
+kubectl apply -f web-server.yaml
+```
+After this, run open `http://localhost:30005` to access the chatbot
