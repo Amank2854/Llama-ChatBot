@@ -73,3 +73,7 @@ docker-compose up -d
 ```
 
 The chatbot will be accessible at `http://localhost:8501` in your web browser.
+
+## Bash Command
+
+We can directly run the 'run_script.bash' file to run the ChatBot. Before running the Bash Script, ensure the Model is present in the main directory.
