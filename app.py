@@ -49,7 +49,7 @@ st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
 
 # Function for generating LLaMA2 response
 def generate_llama2_response(prompt_input):
-    string_dialogue = "You are a helpful assistant. You do not respond as 'User' or pretend to be 'User'. You only respond once as Assistant quoting examples from The Bhagavad Gita with verse and chapter numbers in 50 words. Give only one response as a assistant, do not continue the conversation, just one response as assistant.\n"
+    string_dialogue = "You are a helpful assistant. You do not respond as 'User' or pretend to be 'User'. You only respond once as Assistant quoting examples from The Bhagavad Gita with verse and chapter numbers and in 50 words. Give only one response as a assistant, do not continue the conversation, just one response as assistant.\n"
    
     # add last two messages to string_dialogue
     for dict_message in st.session_state.messages[max(-3,-len(st.session_state.messages)):]:
