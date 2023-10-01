@@ -5,23 +5,25 @@ Here's a brief overview of the components of the repository:
 
 - `app.py`: The Streamlit web application code that allows users to interact with the chatbot through a simple user interface.
 
-- `llama-2-7b-chat.ggmlv3.q2_K.bin`:  Quantized model weights provided by TheBloke.   Can be downloaded via 
+- `llama-2-7b-chat.ggmlv3.q2_K.bin`:  Quantized model weights provided by TheBloke. It can be downloaded via 
 
 ```
 https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/resolve/main/llama-2-7b-chat.ggmlv3.q2_K.bin
 ```
+  We can also use any other model. Just write the model name in the ChatModel Function.
 
-- `Dockerfile`: The Dockerfile used to containerize the application for easy deployment and management.
+- `Dockerfile`: The Dockerfile containerises the application for easy deployment and management.
 
-- `docker-compose.yml`: A Docker Compose file that simplifies the deployment of the chatbot with memory as a Docker container.
+- `docker-compose.yml`: A Docker Compose file simplifies the chatbot deployment as a Docker container.
 
 - `requirements.txt`: Contains a list of Python dependencies required to run the application.
 
 ## Prerequisites
 
-Before running the Streamlit Chatbot with Memory, you need to have the following installed:
+Before running the Gita ChatBot, you need to have the following installed:
 
 1. Python
+2. Docker
 
 ## Installation
 
@@ -30,7 +32,7 @@ To set up the chatbot locally, follow these steps:
 1. Clone this repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/talhaanwarch/streamlit-llama.git
+git clone https://github.com/Amank2854/Llama-ChatBot.git
 ```
 
 2. Create a virtual environment and activate it:
@@ -48,7 +50,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-To run the Streamlit Chatbot with Memory, execute the following command:
+To run the Gita ChatBot, execute the following command:
 
 ```bash
 streamlit run app.py
