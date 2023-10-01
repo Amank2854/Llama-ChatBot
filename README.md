@@ -85,4 +85,4 @@ To run the chatbot on kubernetes web server, run the following command
 ```bash
 kubectl apply -f web-server.yaml
 ```
-After this, run open `http://localhost:30005` to access the chatbot
+After this, open `http://localhost:30005` to access the chatbot
